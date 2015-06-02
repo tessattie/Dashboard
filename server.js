@@ -1,16 +1,18 @@
-var http = require('http');
+var express = require("express");
+var app     = express();
+var path    = require("path");
 
-// On instancie un nouveau serveur 
-var server = http.createServer(function(req,res){
-// Définition du type de réponse envoyé
-	res.writeHead(200, {'Content-Type' : 'text/html'});
+//Store all JS and CSS in Scripts folder.
+app.use("/css", express.static(__dirname + '/css'));
+app.use("/js", express.static(__dirname + '/js'));
 
-// Définition du contenu de notre page
-	res.end('<h1>Hello World!</h1>');
-})
 
-// Sur Heroku, on ne sait pas de quel port il s'agit donc nous devons 
-// créer une variable nous permettant de récupérer le port qui nous est 
-// attribué
-var port = Number(process.env.PORT || 3000)
-server.listen(port);
+// Render index.html
+app.get('/',function(req,res){
+  res.sendFile(__dirname + '/index.html');
+  //__dirname : It will resolve to your project folder.
+});
+
+app.listen(3000);
+
+console.log("Running at Port 3000");

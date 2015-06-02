@@ -8,5 +8,9 @@
     "start": "node server.js"
   },
   "author": "Tess ATTIE",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.4"
+  }
+
 }
