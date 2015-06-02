@@ -14,8 +14,8 @@ app.get('/',function(req,res){
 });
 
 // Render chart.html
-app.get('/chart.html',function(req,res){
-  res.sendFile(__dirname + '/chart.html');
+app.get('/charts.html',function(req,res){
+  res.sendFile(__dirname + '/charts.html');
   //__dirname : It will resolve to your project folder.
 });
 
