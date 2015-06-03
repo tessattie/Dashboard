@@ -3,11 +3,13 @@ var app = express();
 url = require('url');
 
 //Use static folders with node.js
-app.use("/css", express.static(__dirname + '/css'));
-app.use("/js", express.static(__dirname + '/js'));
-app.use("/img", express.static(__dirname + '/img'));
+app.use("/bootstrap", express.static(__dirname + '/bootstrap'));
+app.use("/build", express.static(__dirname + '/build'));
+app.use("/dist", express.static(__dirname + '/dist'));
 app.use("/font", express.static(__dirname + '/font'));
-
+app.use("/documentation", express.static(__dirname + '/documentation'));
+app.use("/pages", express.static(__dirname + '/pages'));
+app.use("/plugins", express.static(__dirname + '/plugins'));
 
 // Render all HTML pages
 app.get('/',function(req,res){
@@ -18,44 +20,12 @@ app.get('/index.html',function(req,res){
   res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/reports.html',function(req,res){
-  res.sendFile(__dirname + '/reports.html');
+app.get('/pages/calendar.html',function(req,res){
+  res.sendFile(__dirname + '/pages/calendar.html');
 });
 
-app.get('/guidely.html',function(req,res){
-  res.sendFile(__dirname + '/guidely.html');
-});
-
-app.get('/charts.html',function(req,res){
-  res.sendFile(__dirname + '/charts.html');
-});
-
-app.get('/shortcodes.html',function(req,res){
-  res.sendFile(__dirname + '/shortcodes.html');
-});
-
-app.get('/icons.html',function(req,res){
-  res.sendFile(__dirname + '/icons.html');
-});
-
-app.get('/faq.html',function(req,res){
-  res.sendFile(__dirname + '/faq.html');
-});
-
-app.get('/pricing.html',function(req,res){
-  res.sendFile(__dirname + '/pricing.html');
-});
-
-app.get('/login.html',function(req,res){
-  res.sendFile(__dirname + '/login.html');
-});
-
-app.get('/signup.html',function(req,res){
-  res.sendFile(__dirname + '/signup.html');
-});
-
-app.get('/error.html',function(req,res){
-  res.sendFile(__dirname + '/error.html');
+app.get('/documentation/index.html',function(req,res){
+  res.sendFile(__dirname + '/documentation/index.html');
 });
 // End of rendering HTML pages
 
