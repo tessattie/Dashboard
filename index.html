@@ -418,6 +418,7 @@
  
     // client.connect('ws://localhost:3000/', 'echo-protocol');
       var socket = io.connect();
+
       socket.on('message', function(message) {
         alert('Le serveur a un message pour vous : ' + message);
     })

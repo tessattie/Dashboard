@@ -57,6 +57,13 @@ server.listen(port, function(){
 
 io = require('socket.io').listen(server);
 
+
+// Configuration pour permettre le fonctionnement sur HEROKU
+io.use(function () {  
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
+
 // Quand on client se connecte, on le note dans la console
 io.sockets.on('connection', function (socket) {
         socket.emit('message', 'Vous êtes bien connecté !');
