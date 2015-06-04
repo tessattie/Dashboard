@@ -1,7 +1,9 @@
 var express = require("express");
 var app = express();
-var http = require('http');
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
 
+server.listen(process.env.PORT || 3000);
 // var request = require('request');
 // var emitter = require('events').EventEmitter;
 // var fs = require('fs');
@@ -47,22 +49,22 @@ app.get('/documentation/index.html',function(req,res){
 });
 // End of rendering HTML pages
 
-var port = Number(process.env.PORT || 3000);
+// var port = Number(process.env.PORT || 3000);
 
-var server = http.createServer(app);
+// var server = http.createServer(app);
 
-server.listen(port, function(){
-	console.log('Server listening on port' + port);
-});
+// server.listen(port, function(){
+// 	console.log('Server listening on port' + port);
+// });
 
-io = require('socket.io').listen(server);
+// io = require('socket.io').listen(server);
 
 
-// Configuration pour permettre le fonctionnement sur HEROKU
-io.use(function () {  
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
-});
+// // Configuration pour permettre le fonctionnement sur HEROKU
+// io.use(function () {  
+//   io.set("transports", ["xhr-polling"]); 
+//   io.set("polling duration", 10); 
+// });
 
 // Quand on client se connecte, on le note dans la console
 io.sockets.on('connection', function (socket) {
