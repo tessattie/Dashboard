@@ -10,7 +10,10 @@
   "author": "Tess ATTIE",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.12.4"
+    "express": "*",
+    "socket.io": "*"
+  },
+  "engines" : {
+    "node" : "0.12.4"
   }
-
 }
