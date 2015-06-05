@@ -48,7 +48,8 @@ var openweathermeteo = function(url, callback){
 		}
 	});
 }
-
+io.set("transports", ["websockets"]);
+io.set("polling duration", 10);
 
 // Quand on client se connecte, on lui envoi un message pour lui avertir
 io.sockets.on('connection', function (socket) {
