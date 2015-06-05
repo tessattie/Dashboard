@@ -428,26 +428,25 @@
       var temperature_max = document.getElementById('temperature_max');
       var description = document.getElementById('desc_mto');
 
-      socket.on('message', function(message) {
-        alert(message);
-        // var p_temp = document.createElement('p');
-        // // var p_temp_min = document.createElement('p');
-        // // var p_temp_max = document.createElement('p');
-        // var p_desc = document.createElement('p');
-        // // // Soustraction avec 275 pour faire une converstion entre Kelvin et Celsius
-        // p_temp.innerHTML = Math.ceil(meteo['temperature'] - 275) + "°C";
-        // // p_temp_max.innerHTML = Math.ceil(meteo['temp_max'] - 275) + "°C";
-        // // p_temp_min.innerHTML = Math.ceil(meteo['temp_min'] - 275) + "°C";
-        // p_desc.innerHTML = meteo['description'].toUpperCase();
-        // var image = document.createElement('img');
-        // temperature.appendChild(p_temp);
-        // // temperature_min.appendChild(p_temp_min);
-        // // temperature_max.appendChild(p_temp_max);
-        // description.appendChild(p_desc);
-        // image.src = "images/" + meteo['description'] + ".gif";
-        // image.title = "Description";
-        // image.id = "type_image";
-        // icone_mto.appendChild(image);
+      socket.on('meteo', function(meteo) {
+        var p_temp = document.createElement('p');
+        // var p_temp_min = document.createElement('p');
+        // var p_temp_max = document.createElement('p');
+        var p_desc = document.createElement('p');
+        // // Soustraction avec 275 pour faire une converstion entre Kelvin et Celsius
+        p_temp.innerHTML = Math.ceil(meteo['temperature'] - 275) + "°C";
+        // p_temp_max.innerHTML = Math.ceil(meteo['temp_max'] - 275) + "°C";
+        // p_temp_min.innerHTML = Math.ceil(meteo['temp_min'] - 275) + "°C";
+        p_desc.innerHTML = meteo['description'].toUpperCase();
+        var image = document.createElement('img');
+        temperature.appendChild(p_temp);
+        // temperature_min.appendChild(p_temp_min);
+        // temperature_max.appendChild(p_temp_max);
+        description.appendChild(p_desc);
+        image.src = "images/" + meteo['description'] + ".gif";
+        image.title = "Description";
+        image.id = "type_image";
+        icone_mto.appendChild(image);
     })
     </script>
   </body>
