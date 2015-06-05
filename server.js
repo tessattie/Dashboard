@@ -36,30 +36,31 @@ app.get('/documentation/index.html',function(req,res){
 // End of rendering HTML pages
 
 // OpenWeatherMAp : envoi des données MTO 
-var openweathermeteo = function(url, callback){
+// var openweathermeteo = function(url, callback){
 	
-	request(url, function(err, response, body){
-		try{
-			var result = JSON.parse(body);
+// 	request(url, function(err, response, body){
+// 		try{
+// 			var result = JSON.parse(body);
 			  		
-			callback(null, result);
-		}catch(e){
-			callback(e); 
-		}
-	});
-}
+// 			callback(null, result);
+// 		}catch(e){
+// 			callback(e); 
+// 		}
+// 	});
+// }
 
 
 // Quand on client se connecte, on lui envoi un message pour lui avertir
 io.sockets.on('connection', function (socket) {
-	openweathermeteo('http://api.openweathermap.org/data/2.5/weather?q=montreuil,fr', function(err, result){
-		if(err) return console.log(err);
-		var mto = [];
-		//mto['latitude'] = result['city']['coord']['lat'];
-		//mto['longitude'] = result['city']['coord']['lat'];
-		//mto['temp_min'] = result['list'][0]['temp']['min'];
-		//mto['temp_max'] = result['list'][0]['temp']['max'];
-		console.log(result['weather'][0].description);
-		socket.emit("meteo", {temperature : result['main']['temp'], description : result['weather'][0].description});
-		});
+	// openweathermeteo('http://api.openweathermap.org/data/2.5/weather?q=montreuil,fr', function(err, result){
+	// 	if(err) return console.log(err);
+	// 	var mto = [];
+	// 	//mto['latitude'] = result['city']['coord']['lat'];
+	// 	//mto['longitude'] = result['city']['coord']['lat'];
+	// 	//mto['temp_min'] = result['list'][0]['temp']['min'];
+	// 	//mto['temp_max'] = result['list'][0]['temp']['max'];
+	// 	console.log(result['weather'][0].description);
+	// 	socket.emit("meteo", {temperature : result['main']['temp'], description : result['weather'][0].description});
+	socket.emit('message', 'Vous etes connecté');
+	// 	});
 });
