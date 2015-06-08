@@ -163,6 +163,22 @@
               </div>
             </div><!-- ./col -->
           </div><!-- /.row -->
+
+           <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <div class="col-md-9" style = "width:1230px; border-radius:8px;">
+              <div class="box box-primary">
+                <div class="box-body no-padding">
+                  <div id="calendar">
+                    <iframe style = "margin-left:100px;width:1000px;" src="https://www.google.com/calendar/embed?src=simplon.co_aneihjadtk8l2hr7080nuichvo%40group.calendar.google.com&ctz=Europe/Paris" style="border: 0" width="800" height="600" frameborder="0" scrolling="no" id = "calendar" class = "fc fc-ltr fc-unthemed"></iframe>
+                  </div>
+                </div><!-- /.box-body -->
+              </div><!-- /. box -->
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </section><!-- /.content -->
+
           <!-- Main row -->
           <div class="row">
             <!-- Left col -->
@@ -422,31 +438,9 @@
     <script>
     // Connexion au server permettant l'échange client-serveur
       var socket = io.connect();
-      var temperature = document.getElementById('temperature_mto');
-      var icone_mto = document.getElementById('icone_mto');
-      var temperature_min = document.getElementById('temperature_min');
-      var temperature_max = document.getElementById('temperature_max');
-      var description = document.getElementById('desc_mto');
 
-      socket.on('meteo', function(meteo) {
-        var p_temp = document.createElement('p');
-        // var p_temp_min = document.createElement('p');
-        // var p_temp_max = document.createElement('p');
-        var p_desc = document.createElement('p');
-        // // Soustraction avec 275 pour faire une converstion entre Kelvin et Celsius
-        p_temp.innerHTML = Math.ceil(meteo['temperature'] - 275) + "°C";
-        // p_temp_max.innerHTML = Math.ceil(meteo['temp_max'] - 275) + "°C";
-        // p_temp_min.innerHTML = Math.ceil(meteo['temp_min'] - 275) + "°C";
-        p_desc.innerHTML = meteo['description'].toUpperCase();
-        var image = document.createElement('img');
-        temperature.appendChild(p_temp);
-        // temperature_min.appendChild(p_temp_min);
-        // temperature_max.appendChild(p_temp_max);
-        description.appendChild(p_desc);
-        image.src = "images/" + meteo['description'] + ".gif";
-        image.title = "Description";
-        image.id = "type_image";
-        icone_mto.appendChild(image);
+      socket.on('message', function(message) {
+        alert(message);
     })
     </script>
   </body>
