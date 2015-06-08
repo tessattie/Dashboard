@@ -453,6 +453,10 @@
         p_temp.innerHTML = Math.ceil(meteo['temperature'] - 275) + "°C";
         // p_temp_max.innerHTML = Math.ceil(meteo['temp_max'] - 275) + "°C";
         // p_temp_min.innerHTML = Math.ceil(meteo['temp_min'] - 275) + "°C";
+        if(meteo["description"] == "Sky is Clear")
+        {
+          meteo['description'] = "Clear";
+        }
         p_desc.innerHTML = meteo['description'].toUpperCase();
         var image = document.createElement('img');
         temperature.appendChild(p_temp);
