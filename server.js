@@ -3,6 +3,7 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var request = require('request');
+var pg = require('pg');
 
 server.listen(process.env.PORT || 3000);
 
@@ -20,6 +21,17 @@ app.use("/admin", express.static(__dirname + '/admin'));
 app.use("/js", express.static(__dirname + '/js'));
 
 
+app.get('/db', function (request, response) {
+  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    client.query('SELECT * FROM test_table', function(err, result) {
+      done();
+      if (err)
+       { console.error(err); response.send("Error " + err); }
+      else
+       { response.send(result.rows); }
+    });
+  });
+});
 
 // Render all HTML pages
 app.get('/',function(req,res){
