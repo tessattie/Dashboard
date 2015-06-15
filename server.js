@@ -5,18 +5,16 @@ var io = require('socket.io').listen(server);
 var request = require('request');
 var pg = require('pg');
 
+var conString = "postgres://yntviqlzscnbqq:w15ISVFDrLBp414QG9sXfbHBMY@ec2-54-204-35-248.compute-1.amazonaws.com:5432/d80v1h0fvs1qi5";
+
 server.listen(process.env.PORT || 3000);
 
+var client = new pg.Client(conString);
+client.connect();
+
 pg.connect(process.env.DATABASE_URL, function(err, client) {
-  var create = client.query('CREATE TABLE trombi(
-  	id SERIAL PRIMARY KEY,
-  	nom VARCHAR(255),
-  	prenom VARCHAR(255), 
-  	promo INTEGER,
-  	PRIMARY KEY(id)
-  	)');
+  var query = client.query("CREATE TABLE IF NOT EXISTS emps(firstname varchar(64), lastname varchar(64))");
   });
-});
 
 // Use static folders with node.js
 app.use("/bootstrap", express.static(__dirname + '/bootstrap'));
