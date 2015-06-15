@@ -7,6 +7,17 @@ var pg = require('pg');
 
 server.listen(process.env.PORT || 3000);
 
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  var create = client.query('CREATE TABLE trombi(
+  	id SERIAL PRIMARY KEY,
+  	nom VARCHAR(255),
+  	prenom VARCHAR(255), 
+  	promo INTEGER,
+  	PRIMARY KEY(id)
+  	)');
+  });
+});
+
 // Use static folders with node.js
 app.use("/bootstrap", express.static(__dirname + '/bootstrap'));
 app.use("/bild", express.static(__dirname + '/build'));
@@ -19,19 +30,6 @@ app.use("/css", express.static(__dirname + '/css'));
 app.use("/images", express.static(__dirname + '/images'));
 app.use("/admin", express.static(__dirname + '/admin'));
 app.use("/js", express.static(__dirname + '/js'));
-
-
-app.get('/db', function (request, response) {
-  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    client.query('SELECT * FROM test_table', function(err, result) {
-      done();
-      if (err)
-       { console.error(err); response.send("Error " + err); }
-      else
-       { response.send(result.rows); }
-    });
-  });
-});
 
 // Render all HTML pages
 app.get('/',function(req,res){
