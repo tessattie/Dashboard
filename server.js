@@ -16,6 +16,10 @@ app.use("/pages", express.static(__dirname + '/pages'));
 app.use("/plugins", express.static(__dirname + '/plugins'));
 app.use("/css", express.static(__dirname + '/css'));
 app.use("/images", express.static(__dirname + '/images'));
+app.use("/admin", express.static(__dirname + '/admin'));
+app.use("/js", express.static(__dirname + '/js'));
+
+
 
 // Render all HTML pages
 app.get('/',function(req,res){
@@ -32,6 +36,22 @@ app.get('/pages/calendar.html',function(req,res){
 
 app.get('/documentation/index.html',function(req,res){
   res.sendFile(__dirname + '/documentation/index.html');
+});
+
+app.get('/admin/administration.html',function(req,res){
+  res.sendFile(__dirname + '/admin/administration.html');
+});
+
+app.get('/admin/tromi.html',function(req,res){
+  res.sendFile(__dirname + '/admin/trombi.html');
+});
+
+app.get('/admin/boite.html',function(req,res){
+  res.sendFile(__dirname + '/admin/boite.html');
+});
+
+app.get('/admin/liens.html',function(req,res){
+  res.sendFile(__dirname + '/admin/liens.html');
 });
 // End of rendering HTML pages
 

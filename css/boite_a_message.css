@@ -1,0 +1,9 @@
+#checkbox_message
+{
+	display:none;
+}
+
+.le_message:hover
+{
+	background-color: #EBEDEC;
+}

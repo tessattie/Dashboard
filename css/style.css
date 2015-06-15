@@ -1,0 +1,161 @@
+#calendar
+{
+	height:500px;
+	overflow: hidden;
+	margin:auto;
+
+}
+
+#annuler_overflow
+{
+	text-align: center;
+	width:98%;
+	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+}
+
+.message_box 
+{
+	background-color: white;
+	width:98%;
+	height:250px;
+	margin-top:30px;
+	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+}
+
+.link_box
+{
+	background-color: white;
+	width:96%;
+	height:250px;
+	margin-top:30px;
+	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+}
+
+.le_message
+{
+	position:absolute;
+	width:93%;
+	height:250px;
+	overflow: hidden;
+	display:inline-block;
+}
+
+.title_message
+{
+	margin:auto;
+	text-align:center;
+	width:90%;
+	padding:10px;
+	border-bottom: 2px solid #3c8dbc;
+}
+
+.text_message
+{
+	height:55%;
+	width:97%;
+	margin-top: 10px;
+	line-height:150%;
+	padding:10px;
+	margin:auto;
+	background-color: white;
+	color:black;
+	text-align: left;
+}
+
+.nom_message
+{
+	margin-top:35px;
+	margin-left: 10px;
+	float:left;
+	display:inline-block ;
+	border-top: 1px solid #3c8dbc;
+}
+
+.date_message
+{
+	margin-top:35px;
+	margin-right: 10px;
+	float:right;
+	display: inline-block;
+	border-top: 1px solid #3c8dbc;
+}
+
+#link_table
+{
+	text-align: center;
+	border-collapse: collapse;
+	width:100%;
+	height:100%;
+}
+th
+{
+	text-align: center;
+}
+.td_lien:hover
+{
+	background-color: #EBEDEC;
+}
+
+.link_box
+{
+	overflow: hidden;
+}
+.link_title
+{
+	text-align: center;
+	border-bottom: 2px solid #3c8dbc;
+	width: 90%;
+	margin: auto;
+	padding: 10px;
+}
+
+.boite_a_idees
+{
+	width: 98%;
+	height: 250px;
+	background-color: white;
+	margin-top: 30px;
+	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+}
+
+.laisser_commentaire
+{
+	width: 96%;
+	height: 250px;
+	background-color: white;
+	margin-top: 30px;
+	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+}
+
+h4
+{
+	text-align: center;
+	border-bottom: 2px solid #3c8dbc;
+	width: 90%;
+	margin: auto;
+	padding: 10px;
+}
+
+.le_formulaire
+{
+	width:90%;
+	margin:auto;
+	margin-top:10px;
+}
+
+#zone_de_texte
+{
+	width:90%;
+	margin:auto;
+	margin-top:20px;
+}
