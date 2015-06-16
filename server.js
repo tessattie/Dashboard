@@ -13,7 +13,7 @@ var client = new pg.Client(conString);
 client.connect();
 
 pg.connect(process.env.DATABASE_URL, function(err, client) {
-  var query = client.query("CREATE TABLE IF NOT EXISTS emps(firstname varchar(64), lastname varchar(64))");
+  var query = client.query("CREATE TABLE IF NOT EXISTS employs(firstname varchar(64), lastname varchar(64))");
   });
 
 // Use static folders with node.js
