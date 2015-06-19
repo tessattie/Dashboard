@@ -1,5 +1,4 @@
 //message slider code
-$("#le_message").hide();
 $("#messages div:gt(0)").hide();
 
 setInterval(function(){
