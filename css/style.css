@@ -73,7 +73,7 @@ border-radius:10px;
 	text-align:center;
 	width:90%;
 	padding:10px;
-	border-bottom: 2px solid #3c8dbc;
+	border-bottom: 2px solid #FF0066;
 }
 
 .text_message
@@ -95,7 +95,7 @@ border-radius:10px;
 	margin-left: 10px;
 	float:left;
 	display:inline-block ;
-	border-top: 1px solid #3c8dbc;
+	border-top: 1px solid #FF0066;
 }
 
 .date_message
@@ -104,7 +104,7 @@ border-radius:10px;
 	margin-right: 10px;
 	float:right;
 	display: inline-block;
-	border-top: 1px solid #3c8dbc;
+	border-top: 1px solid #FF0066;
 }
 
 #link_table
@@ -131,7 +131,7 @@ th
 .link_title
 {
 	text-align: center;
-	border-bottom: 2px solid #3c8dbc;
+	border-bottom: 2px solid #FF0066;
 	width: 90%;
 	margin: auto;
 	padding: 10px;
@@ -168,7 +168,7 @@ th
 h4
 {
 	text-align: center;
-	border-bottom: 2px solid #3c8dbc;
+	border-bottom: 2px solid #FF0066;
 	width: 90%;
 	margin: auto;
 	padding: 10px;
