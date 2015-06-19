@@ -1,3 +1,20 @@
+#nouvelle_promo_close
+{
+	float:right;
+	display:inline-block;
+	margin-top:-34px;
+}
+#nouvel_eleve_close
+{
+	float:right;
+	display:inline-block;
+	margin-top:-34px;
+}
+#nouvelle_promo_submit
+{
+	display:inline-block;
+}
+
 #nouvelle_promotion
 {
 	width:60%;

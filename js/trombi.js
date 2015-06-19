@@ -1,11 +1,8 @@
 // A faire disparaitre en fonction du click
 var first_content = document.getElementById("first_content"); 
 var second_content = document.getElementById("second_content"); 
-var windowz = document.getElementById("window");
-var nouvelle_promo = document.getElementById("nouvelle_promotion");
 var delete_student = document.getElementById("delete_student");
 var confirm_delete = document.getElementById("confirm_delete");
-var add_student_button = document.getElementById("add_student_button");
 var add_student = document.getElementById("add_student");
 var checkbox = document.getElementsByClassName("checkbox");
 
@@ -22,16 +19,21 @@ for (var i=0; i < promos.length; i++)
 	  }
 	}
 
-nouvelle_promo.onclick = function(){
-	if(windowz.style.display=="none")
-	{
-		windowz.style.display = "block"; 
-	}
-	else
-	{
-		windowz.style.display = "none";
-	}
-}
+$('#nouvelle_promotion').click(function(){
+		$('#window').show(); 
+});
+
+$('#nouvelle_promo_close').click(function(){
+		$('#window').hide(); 
+});
+
+$('#nouvel_eleve_close').click(function(){
+		$('#add_student').hide(); 
+});
+
+$('#add_student_button').click(function(){
+		$('#add_student').show(); 	
+});
 
 delete_student.onclick = function(){
 	for (var i = checkbox.length - 1; i >= 0; i--) 
@@ -48,14 +50,3 @@ delete_student.onclick = function(){
 		}
 	};
 }	
-
-add_student_button.onclick = function(){
-	if(add_student.style.display == "none")
-	{
-		add_student.style.display = "block";
-	}
-	else
-	{
-		add_student.style.display = "none";
-	}
-}

@@ -110,18 +110,20 @@
         <section class="content_trombi">
             <button type="button" id = "nouvelle_promotion" class="btn btn-primary btn-lg btn-block">Nouvelle Promotion</button>
             <div id = "window">
-					<form>
+					<form name = "formulaire_nouvelle_promo">
 					  <div class="form-group">
-					    <label for="exampleInputEmail1">Numéro de Promo</label>
-					    <input type="text" class="form-control" id="numero-promo" placeholder="Numéro de promo">
+					    <label for="numero_promo">Numéro de Promo</label>
+					    <input type="text" class="form-control" id="numero_promo" placeholder="Numéro de promo">
 					  </div>
 					  <div class="form-group">
-					    <label for="exampleInputPassword1">Lieu</label>
-					    <input type="password" class="form-control" id="lieu" placeholder="Indiquez le lieu">
+					    <label for="lieu">Lieu</label>
+					    <input type="text" class="form-control" id="lieu" placeholder="Indiquez le lieu">
 					  </div>
-					  <button type="submit" class="btn btn-default">Submit</button>
+					  <button type="submit" class="btn btn-default" id = "nouvelle_promo_submit">Submit</button>
 					</form>
+					  <button type="submit" class="btn btn-default" id = "nouvelle_promo_close">Close</button>
 				</div>
+				<div id = "message_de_confirmation"></div>
 		 <div id = "first_content">
 		 	<div id = "les_promotions">
             	<h4 id = "promotions">PROMOTIONS</h4>
@@ -139,22 +141,27 @@
 				<button class="btn btn-default" type="submit" id = "confirm_delete">Delete</button>
 			</div>
 			<div id = "add_student">
-				<form>
+				<form name = "form_nouvel_eleve" enctype="multipart/form-data">
 				  <div class="form-group">
-				    <label for="exampleInputEmail1">Nom</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+				    <label for="nom">Nom</label>
+				    <input type="text" class="form-control" id="student_nom" placeholder="Entrez le nom de l'élève">
 				  </div>
 				  <div class="form-group">
-				    <label for="exampleInputPassword1">Prénom</label>
-				    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+				    <label for="prenom">Prénom</label>
+				    <input type="text" class="form-control" id="student_prenom" placeholder="Entrez le prénom de l'élève">
 				  </div>
 				  <div class="form-group">
-				    <label for="exampleInputFile">Photo</label>
-				    <input type="file" id="exampleInputFile">
-				    <p class="help-block">Example block-level help text here.</p>
+				    <label for="promo">Promo</label>
+				    <input type="text" class="form-control" id="student_promo" placeholder="Entrez le numéro de promo de l'élève">
 				  </div>
-				  <button type="submit" class="btn btn-default">Submit</button>
+				  <div class="form-group">
+				    <label for="picture">Photo</label>
+				    <input type="file" id="student_picture" name = 'student_picture'>
+				    <p class="help-block">Rajoutez la photo de l'élève.</p>
+				  </div>
+				  <button type="submit" class="btn btn-default" id = "nouvel_eleve_submit">Submit</button>
 				</form>
+				<button type="submit" class="btn btn-default" id = "nouvel_eleve_close">Close</button>
 			</div>
 			<div id = "partie_trombi">
 				<div id = "eleve">
@@ -316,5 +323,30 @@
     <script src="../plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
     <!-- Page specific script -->
     <script src="../js/trombi.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+    // Connexion au server permettant l'échange client-serveur
+      var socket = io.connect();
+
+      $("#nouvelle_promo_submit").click(function(){
+      	var numero = document.forms['formulaire_nouvelle_promo'].elements['numero_promo'].value;
+      	var lieu = document.forms['formulaire_nouvelle_promo'].elements['lieu'].value;
+      	socket.emit('nouvelle_promo', {numero_promo : numero, lieu_promo : lieu});
+      	$('#window').hide();
+      });
+
+      socket.on("confirmation_nouvelle_promo", function(confirmation_nouvelle_promo){
+      	alert(confirmation_nouvelle_promo);
+      });
+
+      $("#nouvel_eleve_submit").click(function(){
+      	var nom = document.forms['form_nouvel_eleve'].elements['student_picture'].value;
+      	alert(nom['type']);
+      	// var prenom = document.forms['form_nouvel_eleve'].elements['lieu'].value;
+      	// var image = document.forms['form_nouvel_eleve'].elements['lieu'].value;
+      	// var promo = document.forms['form_nouvel_eleve'].elements['lieu'].value;
+	      });
+
+    </script>
   </body>
 </html>

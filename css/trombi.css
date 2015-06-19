@@ -14,21 +14,33 @@
 {
 	padding:15px;
 	text-align:center;
+	height:475px;
 	margin-top:20px;
 	width:100%;
 	background-color:white;
 	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
 	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
 	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+}
 
+#photo_aggrandit 
+{
+	width:40%;
+	height:auto;
+	margin-top:10px;
+}
+
+#tooltip
+{
+	display:none;
 }
 
 .block_eleve
 {
 	width:99%;
 	margin:auto;
-	height:300px;
-	overflow-y: scroll;
+	overflow-y:scroll;
+	height:390px;
 	padding:5px;
 	margin-top:25px;
 	background-color: white;
@@ -54,16 +66,17 @@ border-radius:10px;
 #eleve 
 {
 	display:inline-block;
-	width:25%;
+	width:23%;
 	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
 	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
 	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
 	margin-top:20px;
-	margin-left:20px;
-	margin-right:20px;
+	margin-left:15px;
+	margin-right:15px;
+	padding:5px;
 }
 
-#photo_eleve
+.photo_eleve
 {
 	width:90%;
 	height:auto;
@@ -72,7 +85,7 @@ border-radius:10px;
 
 #nom_eleve
 {
-	width:80%;
+	width:100%;
 	margin:auto;
 	margin-top:15px;
 	text-align:center;

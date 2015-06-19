@@ -7,3 +7,9 @@
 {
 	background-color: #EBEDEC;
 }
+#nouveau_message_close
+{
+	float:right;
+	display:inline-block;
+	margin-top:-34px;
+}
