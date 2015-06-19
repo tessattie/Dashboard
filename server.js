@@ -105,7 +105,6 @@ io.sockets.on('connection', function (socket) {
 					socket.emit("messages_affiches", messages_affiche[0].rows);
 				}); 
 		  });
-
 	});
 
 	socket.on("new_comment", function (data){
