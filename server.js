@@ -32,7 +32,7 @@ app.use("/documentation", express.static(__dirname + '/documentation'));
 app.use("/pages", express.static(__dirname + '/pages'));
 app.use("/plugins", express.static(__dirname + '/plugins'));
 app.use("/css", express.static(__dirname + '/css'));
-app.use("/images", express.static(__dirname + '/images'));
+app.use("/assets", express.static(__dirname + '/assets'));
 app.use("/admin", express.static(__dirname + '/admin'));
 app.use("/js", express.static(__dirname + '/js'));
 
