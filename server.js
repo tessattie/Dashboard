@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+var prompt = require('prompt');
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var request = require('request');
@@ -73,9 +74,6 @@ app.get('/admin/commentaires.html',function(req,res){
   res.sendFile(__dirname + '/admin/commentaires.html');
 });
 
-app.get('/admin/chemin.php',function(req,res){
-  res.sendFile(__dirname + '/admin/chemin.php');
-});
 // End of rendering HTML pages
 
 // OpenWeatherMAp : envoi des données MTO 
@@ -114,6 +112,7 @@ io.sockets.on('connection', function (socket) {
 					messages_affiche.push(rows);
 					console.log(messages_affiche[0].rows[0].title);
 					socket.emit("messages_affiches", messages_affiche[0].rows);
+					 client.end();
 				}); 
 		  });
 	});
@@ -125,22 +124,30 @@ io.sockets.on('connection', function (socket) {
 			else 
 				client.query('INSERT INTO commentaires(comm) VALUES($1)', [data], function(err){
 					console.log(err);
+					client.end();
 				}); 
+				
 		  });
 	});
 
 	socket.on('supprimer_commentaires', function (data){
 		pg.connect(config, function(err, client, done) {
 			if (err)
+			{
 				console.log(err); 
+				client.end();
+			}
 			else 
+			{
 				for(var i = 0; i < data.length; i++)
 				{
 					client.query('DELETE FROM commentaires WHERE id ='+data[i], function(err){
 						console.log(err);
+						client.end();
 					}); 
 				};
 				socket.emit("reload", "reload");
+			}
 		  });
 	});
 
@@ -153,6 +160,7 @@ io.sockets.on('connection', function (socket) {
 					data['titre'], data['message'], data['nom'], data['prenom'], data['slider'], data['the_date']], function(err){
 					console.log(err);
 				}); 
+				 client.end();
 		  });
 		socket.emit("confirmation_nouveau_message", "Formulaire créé avec succès");
 	});
@@ -166,7 +174,8 @@ io.sockets.on('connection', function (socket) {
 					commentaires.push(rows);
 					console.log(err);
 					socket.emit("commentaires", commentaires[0].rows);
-				}); 
+					client.end();
+				});
 		  });
 
 	// socket.on('nouvelle_promo', function (nouvelle_promo){
