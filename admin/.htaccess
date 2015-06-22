@@ -1,0 +1,4 @@
+AuthName "Page d'administration du dashboard"
+AuthType Basic
+AuthUserFile "http://simplon-dashboard-project.herokuapp.com/admin/.htpasswd"
+Require valid-user
