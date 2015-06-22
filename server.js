@@ -72,6 +72,10 @@ app.get('/admin/liens.html',function(req,res){
 app.get('/admin/commentaires.html',function(req,res){
   res.sendFile(__dirname + '/admin/commentaires.html');
 });
+
+app.get('/admin/chemin.php',function(req,res){
+  res.sendFile(__dirname + '/admin/chemin.php');
+});
 // End of rendering HTML pages
 
 // OpenWeatherMAp : envoi des données MTO 
