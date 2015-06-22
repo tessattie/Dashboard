@@ -9,19 +9,19 @@ var pg = require('pg');
 // var localString = process.env.DATABASE_URL || 'postgres://localhost:5432/?password=admin';
 server.listen(process.env.PORT || 3000);
 
-// var config = {};
-// config.user = 'postgres';
-// config.password = 'admin';
-// config.database = 'dashboard';
-// config.host = 'localhost';
-// config.port = 5432;
-
 var config = {};
-config.user = 'yntviqlzscnbqq';
-config.password = 'w15ISVFDrLBp414QG9sXfbHBMY';
-config.database = 'd80v1h0fvs1qi5';
-config.host = 'ec2-54-204-35-248.compute-1.amazonaws.com';
+config.user = 'postgres';
+config.password = 'admin';
+config.database = 'dashboard';
+config.host = 'localhost';
 config.port = 5432;
+
+// var config = {};
+// config.user = 'yntviqlzscnbqq';
+// config.password = 'w15ISVFDrLBp414QG9sXfbHBMY';
+// config.database = 'd80v1h0fvs1qi5';
+// config.host = 'ec2-54-204-35-248.compute-1.amazonaws.com';
+// config.port = 5432;
 
 // Use static folders with node.js
 app.use("/bootstrap", express.static(__dirname + '/bootstrap'));
@@ -53,26 +53,9 @@ app.get('/documentation/index.html',function(req,res){
   res.sendFile(__dirname + '/documentation/index.html');
 });
 
-app.get('/admin/administration.html',function(req,res){
-  res.sendFile(__dirname + '/admin/administration.html');
+app.get('/admin',function(req,res){
+  res.sendFile(__dirname + '/admin/login.html');
 });
-
-app.get('/admin/tromi.html',function(req,res){
-  res.sendFile(__dirname + '/admin/trombi.html');
-});
-
-app.get('/admin/boite.html',function(req,res){
-  res.sendFile(__dirname + '/admin/boite.html');
-});
-
-app.get('/admin/liens.html',function(req,res){
-  res.sendFile(__dirname + '/admin/liens.html');
-});
-
-app.get('/admin/commentaires.html',function(req,res){
-  res.sendFile(__dirname + '/admin/commentaires.html');
-});
-
 // End of rendering HTML pages
 
 // OpenWeatherMAp : envoi des données MTO 
@@ -127,6 +110,13 @@ io.sockets.on('connection', function (socket) {
 				}); 
 				
 		  });
+	});
+
+	socket.on('authentification', function (data) {
+		if((data['username']=='Simplon')&&(data['password']=='Dashboard'))
+		{
+			console.log("Vous avez le bon mot de passe");
+		}
 	});
 
 	socket.on('supprimer_commentaires', function (data){

@@ -82,15 +82,6 @@
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
               </a>
             </li>
-            <li class="active treeview">
-              <a href="admin/administration.html">
-                <i class="fa fa-dashboard"></i> <span>Administration</span> <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="admin/boite.html"><i class="fa fa-circle-o"></i>Boîte à message</a></li>
-                <li><a href="admin/commentaires.html"><i class="fa fa-circle-o"></i>Commentaires</a></li>
-              </ul>
-            </li>
           </ul>
         </section>
         <!-- /.sidebar -->
@@ -618,30 +609,30 @@
       var temperature_min = document.getElementById('temperature_min');
       var temperature_max = document.getElementById('temperature_max');
       var description = document.getElementById('desc_mto');
+      // Variable nous permettant de connaître l'état de connexion
+      var etat = 0;
 
       socket.on('meteo', function(meteo) {
-        var p_temp = document.createElement('p');
-        // var p_temp_min = document.createElement('p');
-        // var p_temp_max = document.createElement('p');
-        var p_desc = document.createElement('p');
-        // // Soustraction avec 275 pour faire une converstion entre Kelvin et Celsius
-        p_temp.innerHTML = Math.ceil(meteo['temperature'] - 275) + "°C";
-        // p_temp_max.innerHTML = Math.ceil(meteo['temp_max'] - 275) + "°C";
-        // p_temp_min.innerHTML = Math.ceil(meteo['temp_min'] - 275) + "°C";
-        if(meteo["description"] == "Sky is Clear")
+        if(etat == 0)
         {
-          meteo['description'] = "Clear";
+          etat = 1;
+          var p_temp = document.createElement('p');
+          var p_desc = document.createElement('p');
+          // // Soustraction avec 275 pour faire une converstion entre Kelvin et Celsius
+          p_temp.innerHTML = Math.ceil(meteo['temperature'] - 275) + "°C";
+          if(meteo["description"] == "Sky is Clear")
+          {
+            meteo['description'] = "Clear";
+          }
+          p_desc.innerHTML = meteo['description'].toUpperCase();
+          var image = document.createElement('img');
+          temperature.appendChild(p_temp);
+          description.appendChild(p_desc);
+          image.src = "assets/images/meteo/" + meteo['description'] + ".gif";
+          image.title = "Description";
+          image.id = "type_image";
+          icone_mto.appendChild(image);
         }
-        p_desc.innerHTML = meteo['description'].toUpperCase();
-        var image = document.createElement('img');
-        temperature.appendChild(p_temp);
-        // temperature_min.appendChild(p_temp_min);
-        // temperature_max.appendChild(p_temp_max);
-        description.appendChild(p_desc);
-        image.src = "assets/images/meteo/" + meteo['description'] + ".gif";
-        image.title = "Description";
-        image.id = "type_image";
-        icone_mto.appendChild(image);
     });
     
     socket.on("messages_affiches", function (data){
