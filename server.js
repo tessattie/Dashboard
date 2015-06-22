@@ -16,6 +16,8 @@ server.listen(process.env.PORT || 3000);
 // config.host = 'localhost';
 // config.port = 5432;
 
+
+// Configuration heroku
 var config = {};
 config.user = 'yntviqlzscnbqq';
 config.password = 'w15ISVFDrLBp414QG9sXfbHBMY';
