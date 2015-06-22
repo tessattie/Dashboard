@@ -1,4 +1,4 @@
-AuthName "Page d'administration protégée"
+AuthName "Page d'administration du dashboard"
 AuthType Basic
 AuthUserFile "/home/site/www/admin/.htpasswd"
 Require valid-user
