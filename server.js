@@ -17,7 +17,7 @@ server.listen(process.env.PORT || 3000);
 // config.port = 5432;
 
 
-// Configuration heroku base de données
+// Configuration heroku
 var config = {};
 config.user = 'yntviqlzscnbqq';
 config.password = 'w15ISVFDrLBp414QG9sXfbHBMY';
