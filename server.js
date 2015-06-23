@@ -9,21 +9,21 @@ var pg = require('pg');
 // var localString = process.env.DATABASE_URL || 'postgres://localhost:5432/?password=admin';
 server.listen(process.env.PORT || 3000);
 
-var config = {};
-config.user = 'postgres';
-config.password = 'admin';
-config.database = 'dashboard';
-config.host = 'localhost';
-config.port = 5432;
+// var config = {};
+// config.user = 'postgres';
+// config.password = 'admin';
+// config.database = 'dashboard';
+// config.host = 'localhost';
+// config.port = 5432;
 
 
 // Configuration heroku
-// var config = {};
-// config.user = 'yntviqlzscnbqq';
-// config.password = 'w15ISVFDrLBp414QG9sXfbHBMY';
-// config.database = 'd80v1h0fvs1qi5';
-// config.host = 'ec2-54-204-35-248.compute-1.amazonaws.com';
-// config.port = 5432;
+var config = {};
+config.user = 'yntviqlzscnbqq';
+config.password = 'w15ISVFDrLBp414QG9sXfbHBMY';
+config.database = 'd80v1h0fvs1qi5';
+config.host = 'ec2-54-204-35-248.compute-1.amazonaws.com';
+config.port = 5432;
 
 // Use static folders with node.js
 app.use("/bootstrap", express.static(__dirname + '/bootstrap'));
