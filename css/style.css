@@ -5,6 +5,47 @@
 	margin:auto;
 }
 
+.essaimage_info
+{
+	color:white;
+	line-height: 1.5em;
+}
+
+.plus_info_box
+{
+	position:absolute;
+	width:0px;
+	height:0px;
+	display:none;
+	padding:10px;
+	color:white;
+	background-color: rgba(19, 25, 27, 0.6);
+	font-weight: bold;
+	margin-top:5px;
+	-webkit-transition: width 0.3s linear 0s;
+	transition:width 0.3s linear 0s;
+	z-index: 10;
+	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	border-radius:3px;
+}
+
+.simplonprod_link
+{
+	color:white;
+	text-decoration: underline;
+}
+
+#info_hover:hover + .plus_info_box
+{
+	width:250px;
+	height:auto;
+	display:block;
+	color:white;
+}
+
+
 .picbig
 {
 	position:absolute;
