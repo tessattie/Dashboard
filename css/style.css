@@ -3,7 +3,23 @@
 	height:500px;
 	overflow: hidden;
 	margin:auto;
+}
 
+.picbig
+{
+	position:absolute;
+	width:0px;
+	-webkit-transition: width 0.3s linear 0s;
+	transition:width 0.3s linear 0s;
+	z-index: 10;
+	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	border-radius:3px;
+}
+#photo_particuliere:hover + .picbig 
+{
+	width:200px;
 }
 
 #annuler_overflow
