@@ -39,7 +39,7 @@
 
 #info_hover:hover + .plus_info_box
 {
-	width:250px;
+	width:100%;
 	height:auto;
 	display:block;
 	color:white;
@@ -95,6 +95,11 @@
 	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
 	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
 	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+}
+
+.col-md-1
+{
+	width:20%;
 }
 
 .overflow_links::-webkit-scrollbar{
