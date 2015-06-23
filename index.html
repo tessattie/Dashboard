@@ -673,15 +673,16 @@
           var p_desc = document.createElement('p');
           // // Soustraction avec 275 pour faire une converstion entre Kelvin et Celsius
           p_temp.innerHTML = Math.ceil(meteo['temperature'] - 275) + "°C";
+          var description = meteo['description'];
           if(meteo["description"] == "Sky is Clear")
           {
-            meteo['description'] = "clear";
+            description = "clear";
           }
           p_desc.innerHTML = meteo['description'].toUpperCase();
           var image = document.createElement('img');
           temperature.appendChild(p_temp);
           description.appendChild(p_desc);
-          image.src = "assets/images/meteo/" + meteo['description'] + ".gif";
+          image.src = "assets/images/meteo/"+description+".gif";
           image.title = "Description";
           image.id = "type_image";
           icone_mto.appendChild(image);
