@@ -89,7 +89,7 @@
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-          <h1>La vie à Simplon</h1>
+          <h1>LA VIE A SIMPLON</h1>
           <ol class="breadcrumb">
             <li><a href="/index.html"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Dashboard</li>
@@ -102,8 +102,8 @@
           <div class="row">
             <div class="col-md-1">
               <!-- small box -->
-              <div class="small-box bg-aqua" style = "background-color:#666666;">
-                <div class="inner" style = "background-color:#666666;">
+              <div class="small-box bg-aqua">
+                <div class="inner">
                   <h3>112</h3>
                   <p class = 'simplon_prod'>Simploniens formés en </br>présentiel</p>
                 </div>
@@ -125,7 +125,7 @@
             <div class="col-md-1">
               <!-- small box -->
               <div class="small-box bg-green" style = "background-color:#666666;">
-                <div class="inner" style = "background-color:#666666;">
+                <div class="inner">
                   <h3>7</h3>
                   <p>Essaimages en cours</p>
                 </div>
@@ -142,8 +142,8 @@
 
             <div class="col-md-1">
               <!-- small box -->
-              <div class="small-box bg-yellow" style = "background-color:#666666;">
-                <div class="inner" style = "background-color:#666666;">
+              <div class="small-box bg-yellow">
+                <div class="inner">
                   <h3>20</h3>
                   <p class = "simplon_prod">Projets mis en production par Simplon PROD</p>
                 </div>
@@ -166,8 +166,8 @@
             </div><!-- ./col -->
             <div class="col-md-1">
               <!-- small box -->
-              <div class="small-box bg-red" style = "background-color:#666666;">
-                <div class="inner" style = "background-color:#666666;">
+              <div class="small-box bg-red">
+                <div class="inner">
                   <h3>5</h3>
                   <p>Prix gagnés</p>
                 </div>
@@ -190,8 +190,8 @@
 
               <div class="col-md-1">
               <!-- small box -->
-              <div class="small-box bg-green" style = "background-color:#666666;">
-                <div class="inner" style = "background-color:#666666;">
+              <div class="small-box bg-green">
+                <div class="inner">
                   <h3>7</h3>
                   <p>Partenaires</p>
                 </div>
@@ -208,18 +208,15 @@
           </div><!-- /.row -->
 
            <!-- Main content -->
-        <section class="content">
-          <div class="row">
+          <div class="row" id = "row_margin">
             <div id = "annuler_overflow">
                   <div id="calendar">
-                    <iframe style = "margin:auto;" src="https://www.google.com/calendar/embed?src=simplon.co_aneihjadtk8l2hr7080nuichvo%40group.calendar.google.com&ctz=Europe/Paris" width="90%" height="600px" frameborder="0" scrolling="no" id = "calendar" class = "fc fc-ltr fc-unthemed"></iframe>
+                    <iframe style = "margin:auto;" src="https://www.google.com/calendar/embed?src=simplon.co_aneihjadtk8l2hr7080nuichvo%40group.calendar.google.com&ctz=Europe/Paris" width="100%" height="600px" frameborder="0" scrolling="no" id = "calendar" class = "fc fc-ltr fc-unthemed"></iframe>
             </div><!-- /.col -->
           </div>
           </div><!-- /.row -->
-        </section><!-- /.content -->
 
-        <div class="row">
-          <div class = "col-xs-12 col-sm-6 col-md-8" id = "min_width">
+        <div class="row" id = "row_margin">
               <div class = "les_promotions">
                 <h4 class = "trombi_promo">TROMBI PROMO 3</h4>
                 <div class = "block_eleve" id = "trombi_scrollbar">
@@ -394,10 +391,38 @@
               </div>
           </div>
         </div>
-          <div class= "col-xs-6 col-md-4">
+
+      <div class = "row" id = "row_margin">
+        <div class="col-md-6">
+          <div class = "message_box">
+            <div id = "messages">
+          </div>
+        </div>
+      </div>
+        <div class="col-md-6">
+          <div class = "link_box">
+            <h4 class = "link_title">LIENS UTILS</h4>
+            <div class = "overflow_links">
+            <table class="table table-bordered" id = "link_table">
+              <!--Liens ICI-->
+            </table>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id = "row_margin">
+        <div class= "col-md-6">
+          <div class = "laisser_commentaire">
+            <h4>LAISSE UN COMMENTAIRE</h4>
+            <textarea class="form-control" rows="6" id = "zone_de_texte">Laisse-nous un commentaire afin de nous aider à améliorer l'interface du dashboard</textarea>
+            <button type="submit" class="btn btn-default" id = "submit_commentaire">valider</button>
+          </div>
+        </div>
+        <div class= "col-md-6">
             <div id = "row_meteo">
                 <div >
-                  <h3 id ="titre_mto">Météo à Montreuil</h3>
+                  <h4>METEO A MONTREUIL</h4>
                 </div><!-- /.box-header -->
                 <div id = 'icone_mto'>
                   <!-- /.mettre image de d'icone MTO-->
@@ -411,56 +436,6 @@
                 </div>
               </div><!-- /.box -->
           </div>
-        </div>
-
-      <div class = "row">
-        <div class="col-md-6">
-          <div class = "message_box">
-            <div id = "messages">
-          </div>
-        </div>
-      </div>
-        <div class="col-md-6">
-          <div class = "link_box">
-            <h4 class = "link_title">Liens utils</h4>
-            <div class = "overflow_links">
-            <table class="table table-bordered" id = "link_table">
-              <tr>
-                <td class = "td_lien"><a target = "_blank" href = "https://github.com/simplonco/bible/wiki/La-charte" class = "balise_lien">Chartre</a></td>
-                <td>Chartre</td>
-              </tr>
-              <tr>
-                <td class = "td_lien"><a target = "_blank" href = "http://simplonline.simplon.co/board" class = "balise_lien">Simplonlife</a></td>
-                <td>Survivez à Simplon !</td>
-              </tr>
-              <tr>
-                <td class = "td_lien"><a target = "_blank" href = "http://simplon.co" class = "balise_lien">Simplon</a></td>
-                <td>Site de Simplon</td>
-              </tr>
-              <tr>
-                <td class = "td_lien"><a  target = "_blank" href = "http://simplonline.simplon.co" class = "balise_lien">Simplonline</a></td>
-                <td>Simplonline: plateforme de cours en ligne</td>
-              </tr>
-              <tr>
-                <td class = "td_lien"><a target = "_blank" href = "http://simplon.co/simplon-prod/" class = "balise_lien">Simplon PROD</a></td>
-                <td>L'équipe de développeurs à Simplon</td>
-              </tr>
-              <tr>
-                <td class = "td_lien"><a target = "_blank" href = "https://github.com/simplonco/bible/wiki/R%C3%A8glement-int%C3%A9rieur" class = "balise_lien">Règlement</a></td>
-                <td>Règlement Intérieur de l'école</td>
-              </tr>
-            </table>
-          </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-          <div class = "laisser_commentaire">
-            <h4>Laisse un commentaire</h4>
-            <textarea class="form-control" rows="6" id = "zone_de_texte">Laisse-nous un commentaire afin de nous aider à améliorer l'interface du dashboard</textarea>
-            <button type="submit" class="btn btn-default" id = "submit_commentaire">valider</button>
-        </div>
       </div>
       </div><!-- /.content-wrapper -->
       <!-- Control Sidebar -->      
@@ -707,6 +682,28 @@
           icone_mto.appendChild(image);
         }
     });
+
+    socket.on('liens_affiches', function (data) {
+        for (var i = 0; i < data.length; i++) 
+        {
+          var table = document.getElementById('link_table');
+          var tr = document.createElement('tr');
+          var a = document.createElement('a');
+          var td_l = document.createElement('td');
+          var td_d = document.createElement('td');
+          td_l.className= 'td_lien';
+          a.href = data[i].lien;
+          a.target = '_blank';
+          a.className = 'link_style';
+          a.innerHTML = data[i].lienlabel;
+          td_d.className = 'description';
+          td_d.innerHTML = data[i].description;
+          td_l.appendChild(a);
+          tr.appendChild(td_l);
+          tr.appendChild(td_d);
+          table.appendChild(tr);
+        };
+      });
     
     socket.on("messages_affiches", function (data){
       date_data = data[0].the_date.slice(0,10);
@@ -733,7 +730,7 @@
         {
           div.style.position = "relative";
         };
-        h4.innerHTML = data[i].title;
+        h4.innerHTML = data[i].title.toUpperCase();
         p.innerHTML = data[i].message; 
         span_nom.innerHTML=data[i].nom+' ';
         span_prenom.innerHTML = data[i].prenom;

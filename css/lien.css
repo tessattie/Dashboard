@@ -5,6 +5,46 @@
 	margin-top:40px;
 }
 
+#ajouter
+{
+	display:inline-block;
+	float:left;
+}
+
+#nouveau_lien_close
+{
+	float:right;
+	margin-top:-50px;
+	display:inline-block;
+}
+
+#formulaire_ajout_lien
+{
+	width:70%;
+	display:none;
+	background-color:white;
+	padding:10px;
+	margin-left:20px;
+	margin-top: 10px;
+	box-shadow: 0 14px 20px 0 rgba(50,50,50,0.2);
+}
+
+#add_link_button
+{
+	background-color:#FF0066;
+	border:1px solid #FF0066;
+}
+
+.lien_style
+{
+	color:#FF0066;
+}
+
+.lien_style:hover
+{
+	color:#FF0066;
+}
+
 #confirm_delete
 {
 	display:inline-block;
@@ -16,6 +56,7 @@
 #boutons_ajout
 {
 	margin-left:20px;
+	margin-top:15px;
 }
 
 h4
@@ -24,14 +65,18 @@ h4
 }
 .les_liens
 {
-	width:80%;
+	width:96%;
 	height:100%;
 	background-color: white;
 	margin:auto;
 	margin-top:20px;
-	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
-	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
-	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	box-shadow: 0 14px 20px 0 rgba(50,50,50,0.2);
+}
+
+#admin_menu 
+{
+	width:90%;
+	margin:auto;
 }
 
 #table_links

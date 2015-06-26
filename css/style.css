@@ -2,6 +2,7 @@
 {
 	height:500px;
 	overflow: hidden;
+	width:97%;
 	margin:auto;
 }
 
@@ -25,9 +26,7 @@
 	-webkit-transition: width 0.3s linear 0s;
 	transition:width 0.3s linear 0s;
 	z-index: 10;
-	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
-	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
-	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	box-shadow: 0 14px 20px 0 rgba(50,50,50,0.2);	
 	border-radius:3px;
 }
 
@@ -53,11 +52,15 @@
 	-webkit-transition: width 0.3s linear 0s;
 	transition:width 0.3s linear 0s;
 	z-index: 10;
-	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
-	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
-	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	box-shadow: 0 14px 20px 0 rgba(50,50,50,0.2);
 	border-radius:3px;
 }
+
+#calendarTitle
+{
+	color:blue;
+}
+
 #photo_particuliere:hover + .picbig 
 {
 	width:250px;
@@ -66,10 +69,9 @@
 #annuler_overflow
 {
 	text-align: center;
-	width:100%;
-	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
-	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
-	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	width:97%;
+	margin:auto;
+	box-shadow: 0 14px 20px 0 rgba(50,50,50,0.2);
 }
 
 .message_box 
@@ -77,11 +79,8 @@
 	background-color: white;
 	width:98%;
 	height:250px;
-	margin-top:30px;
 	overflow: hidden;
-	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
-	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
-	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	box-shadow: 0 14px 20px 0 rgba(50,50,50,0.2);
 }
 
 .link_box
@@ -91,10 +90,7 @@
 	width:100%;
 	height:250px;
 	overflow: hidden;
-	margin-top:30px;
-	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
-	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
-	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	box-shadow: 0 14px 20px 0 rgba(50,50,50,0.2);
 }
 
 .col-md-1
@@ -119,6 +115,11 @@ border-radius:10px;
 -webkit-box-shadow:0 0 6px gray inset;
 } 
 
+.content-wrapper
+{
+	background-color: white;
+}
+
 .le_message
 {
 	position:absolute;
@@ -135,7 +136,7 @@ border-radius:10px;
 	text-align:center;
 	width:90%;
 	padding:10px;
-	border-bottom: 2px solid #FF0066;
+	border-bottom: 1px solid #FF0066;
 }
 
 .text_message
@@ -190,13 +191,26 @@ th
 	background-color: #EBEDEC;
 }
 
+.balise_lien:hover
+{
+	color: #FF0066;
+}
+.balise_lien
+{
+	color: #FF0066;
+}
+
 .link_title
 {
 	text-align: center;
-	border-bottom: 2px solid #FF0066;
+	border-bottom: 1px solid #FF0066;
 	width: 90%;
 	margin: auto;
 	padding: 10px;
+}
+#row_margin
+{
+	margin-bottom:35px;
 }
 
 .simplon_prod
@@ -210,21 +224,15 @@ th
 	height: 250px;
 	background-color: white;
 	margin-top: 30px;
-	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
-	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
-	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	box-shadow: 0 14px 20px 0 rgba(50,50,50,0.2);
 }
 
 .laisser_commentaire
 {
-	width: 97%;
 	height: 270px;
+	width:98%;
 	background-color: white;
-	margin-left:15px;
-	margin-top: 30px;
-	-webkit-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
-	-moz-box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
-	box-shadow: 1px 1px 14px -1px rgba(69,69,69,1);
+	box-shadow: 0 14px 20px 0 rgba(50,50,50,0.2);
 }
 #submit_commentaire
 {
@@ -235,7 +243,7 @@ th
 h4
 {
 	text-align: center;
-	border-bottom: 2px solid #FF0066;
+	border-bottom: 1px solid #FF0066;
 	width: 90%;
 	margin: auto;
 	padding: 10px;
@@ -262,4 +270,20 @@ h4
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+}
+.inner
+{
+	background-color: white;
+	color:black;
+	box-shadow: 0 14px 20px 0 rgba(50,50,50,0.2);
+}
+
+.link_style
+{
+	color:#FF0066;
+}
+
+.link_style:hover
+{
+	color:#FF0066;
 }

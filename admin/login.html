@@ -29,20 +29,19 @@
     <![endif]-->
   </head>
   <body>
-
     <section class = "login_partie_admin">
-      <form class="form-horizontal" id = "form_auth" name="authentification">
+      <form class="form-horizontal" id = "form_auth" name="authentification" method = "post" action='traitement'>
         <div class="form-group">
           <h4>Vous devez vous authentifier pour accéder à la partie admin :</h4>
           <label for="utilisateur" class="col-sm-2 control-label">Nom d'utilisateur</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="utilisateur" placeholder="Nom d'utilisateur">
+            <input type="text" class="form-control" id="utilisateur" placeholder="Nom d'utilisateur" name= "username">
           </div>
         </div>
         <div class="form-group">
           <label for="mdp" class="col-sm-2 control-label">Mot de passe</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="mdp" placeholder="Mot de passe">
+            <input type="password" class="form-control" id="mdp" placeholder="Mot de passe" name = "mdp">
           </div>
         </div>
         <div class="form-group">
@@ -75,13 +74,11 @@
     <script src="../js/trombi.js"></script>
     <script src = "/socket.io/socket.io.js"></script>
     <script type="text/javascript">
-      var socket = io.connect();  
-      $('#bouton_validation').click(function(){
-        var username = document.getElementById('utilisateur').value;
-        var password = document.getElementById('mdp').value;
-        socket.emit('authentification', {'username':username, 'password':password});
-      });
+      var socket = io.connect(); 
 
+      // $('#bouton_validation').click(function(){
+
+      // });
     </script>
   </body>
 </html>

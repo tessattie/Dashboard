@@ -10,14 +10,17 @@
   "author": "Tess ATTIE",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.13.1",
+    "cookie-parser": "latest",
+    "cool-ascii-faces": "~1.3.x",
     "express": "*",
-    "socket.io": "*",
-    "request": "*",
-    "pg": "4.x",
+    "express-session": "latest",
     "multer": "~0.1.6",
-    "cool-ascii-faces": "~1.3.x"
+    "pg": "4.x",
+    "request": "*",
+    "socket.io": "*"
   },
-  "engines" : {
-    "node" : "0.12.4"
+  "engines": {
+    "node": "0.12.4"
   }
 }
