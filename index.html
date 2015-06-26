@@ -684,6 +684,9 @@
     });
 
     socket.on('liens_affiches', function (data) {
+      var test = document.getElementsByClassName('td_lien');
+      if(test.length > 1)
+      {
         for (var i = 0; i < data.length; i++) 
         {
           var table = document.getElementById('link_table');
@@ -703,6 +706,7 @@
           tr.appendChild(td_d);
           table.appendChild(tr);
         };
+      };
       });
     
     socket.on("messages_affiches", function (data){
