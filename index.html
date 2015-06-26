@@ -685,7 +685,7 @@
 
     socket.on('liens_affiches', function (data) {
       var test = document.getElementsByClassName('td_lien');
-      if(test.length == 1)
+      if(test.length == 0)
       {
         for (var i = 0; i < data.length; i++) 
         {
